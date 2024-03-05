@@ -20,7 +20,7 @@
     <div class="container">
       <div class="cursor"></div>
       <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-md bg-black fixed-top">
+      <nav class="navbar navbar-expand-sm bg-black fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand text-white" href="#">
             <img src="./assets/img/logo-green.png" width="50" alt="francesco napoli logo" />
@@ -45,16 +45,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link me-4" aria-current="page" href="#about-me">ABOUT</a>
+                <a class="nav-link me-4" aria-current="page" href="#aboutme">ABOUT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link me-4" href="#resume">RESUME</a>
+                <a class="nav-link me-4" href="#resu-me">RESUME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link me-4" href="#portfolio">PORTFOLIO</a>
+                <a class="nav-link me-4" href="#portfol-io">PORTFOLIO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact">CONTACT</a>
+                <a class="nav-link" href="#cont-act">CONTACT</a>
               </li>
             </ul>
           </div>
@@ -190,8 +190,9 @@
       </div>
 
       <!-- seconda sezione about -->
-      <div style="height: 50px" id="about-me"></div>
-      <section class="about-me">
+
+      <section class="about-me" id="aboutme">
+        <div style="height: 50px" id="about-me"></div>
         <h2 class="mt-5" data-aos="fade-right">ABOUT <span class="text-var">ME</span></h2>
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-6">
@@ -219,8 +220,9 @@
       </section>
 
       <!-- sezione skills -->
-      <div style="height: 50px" id="resume"></div>
-      <section class="resume">
+
+      <section class="resume" id="resu-me">
+        <div style="height: 50px" id="resume"></div>
         <h2 class="mt-5 text-end" data-aos="fade-left">RESU<span class="text-var">ME</span></h2>
         <div class="row">
           <div class="col-12 col-xl-4">
@@ -732,8 +734,9 @@
       </section>
 
       <!-- sezione portfolio -->
-      <div style="height: 50px" id="portfolio"></div>
-      <section class="portfolio">
+
+      <section class="portfolio" id="portfol-io">
+        <div style="height: 100px" id="portfolio"></div>
         <div class="row align-items-center">
           <div class="col-12 col-lg-4">
             <h2 class="mb-4" data-aos="zoom-in-right"><span class="text-var">MY</span> WORKS</h2>
@@ -750,8 +753,9 @@
         </div>
       </section>
       <!-- sezione contatti  -->
-      <div style="height: 50px" id="contact"></div>
-      <section class="contact">
+
+      <section class="contact" id="cont-act">
+        <div style="height: 50px" id="contact"></div>
         <h2 class="my-5" data-aos="fade-right">CONTACT <span class="text-var">ME</span></h2>
         <div class="row">
           <div class="col-lg-7">
@@ -783,17 +787,23 @@
         </div>
       </section>
       <!--  -->
-      <footer class="mt-5">
-        <!-- Pulsante Easter Egg -->
-        <button id="css-toggle">Come sarebbe il mondo senza CSS?</button>
-
-        <!-- Modale di Conferma -->
-        <div id="confirm-modal" style="display: none">
-          Vuoi davvero scoprirlo?
-          <button id="confirm-btn">Sì</button>
-        </div>
-      </footer>
     </div>
+    <footer class="mt-5 bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center my-5">
+            <h3 class="fs-6 text-secondary">© 2024 Napoli Francesco</h3>
+            <h3 class="fs-6 mt-3 text-secondary">All rights reserved</h3>
+            <button id="css-toggle" class="btn">Come sarebbe il mondo senza CSS?</button>
+            <div id="confirm-modal" class="text-center" style="display: none">
+              Vuoi davvero scoprirlo?
+              <button id="confirm-btn" class="btn">Sì</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <button id="bring-me-up" style="display: none">
       <i class="bi bi-chevron-compact-up"></i>
     </button>

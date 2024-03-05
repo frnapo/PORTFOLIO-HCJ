@@ -72,34 +72,34 @@ document.querySelectorAll(".color-box").forEach((box) => {
 });
 
 //funzione per link navbar
-
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-  const updateActiveLink = () => {
-    let currentSection = "";
+  function updateActiveLink() {
+    let currentSectionId = "";
 
-    if (window.scrollY < 100) {
-      navLinks.forEach((link) => link.classList.remove("active"));
-      return;
-    }
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - sectionHeight / 3) {
-        currentSection = section.getAttribute("class");
+      const sectionHeight = section.offsetHeight;
+      const sectionBottom = sectionTop + sectionHeight;
+
+      // Controlla se la sezione è nella viewport
+      if (window.scrollY >= sectionTop - sectionHeight / 3 && window.scrollY < sectionBottom) {
+        currentSectionId = section.getAttribute("id");
       }
     });
+
     navLinks.forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href").includes(currentSection)) {
+      if (link.getAttribute("href") === "#" + currentSectionId) {
         link.classList.add("active");
       }
     });
-  };
+  }
 
   window.addEventListener("scroll", updateActiveLink);
+  window.addEventListener("resize", updateActiveLink);
   updateActiveLink();
 });
 
@@ -108,10 +108,6 @@ document.addEventListener("scroll", function () {
   let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrollPosition = window.scrollY;
   let scrollPercentage = (scrollPosition / scrollHeight) * 100;
-
-  console.log(
-    `ScrollHeight: ${scrollHeight}, ClientHeight: ${document.documentElement.clientHeight}, ScrollY: ${scrollY}, ScrollPercentage: ${scrollPercentage}`
-  );
 
   document.getElementById("progress-bar").style.width = scrollPercentage + "%";
 });
@@ -180,8 +176,9 @@ document.getElementById("confirm-btn").addEventListener("click", function () {
 
   if (clickCount < 3) {
     this.style.position = "relative";
+    this.style.right = `${Math.random() * 100}px`;
     this.style.left = `${Math.random() * 100}px`;
-    this.style.top = `${Math.random() * 100}px`;
+    this.style.bottom = `${Math.random() * 100}px`;
 
     document.getElementById("confirm-modal").textContent = "Sei sicuro?";
     document.getElementById("confirm-modal").appendChild(this);
@@ -197,7 +194,6 @@ document.getElementById("confirm-btn").addEventListener("click", function () {
       }, 0);
     });
 
-    // Nascondi il modale
     document.getElementById("confirm-modal").style.display = "none";
   }
 });

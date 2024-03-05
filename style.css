@@ -467,6 +467,17 @@ h4 {
 
 /* ----------------------------------------------------------------------------------- */
 
+/* footer */
+#css-toggle {
+  font-size: 4px;
+}
+
+#confirm-modal {
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+
 /* pulsante bring-me-up */
 #bring-me-up {
   display: none;
@@ -487,7 +498,7 @@ h4 {
   #profile-pic {
     width: 350px;
     height: 100%;
-    margin-left: -30px;
+    margin-left: -20px;
   }
 
   #main-headings {
