@@ -106,9 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
 //funzione per progressbar
 document.addEventListener("scroll", function () {
   let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
   let scrollPosition = window.scrollY;
   let scrollPercentage = (scrollPosition / scrollHeight) * 100;
+
+  console.log(
+    `ScrollHeight: ${scrollHeight}, ClientHeight: ${document.documentElement.clientHeight}, ScrollY: ${scrollY}, ScrollPercentage: ${scrollPercentage}`
+  );
 
   document.getElementById("progress-bar").style.width = scrollPercentage + "%";
 });
