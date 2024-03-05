@@ -458,6 +458,13 @@ h4 {
   background-color: white;
 }
 
+.contact-desc {
+  font-weight: 200;
+  letter-spacing: 7px;
+  text-align: center;
+  padding: 60px;
+}
+
 /* ----------------------------------------------------------------------------------- */
 
 /* pulsante bring-me-up */
@@ -467,12 +474,12 @@ h4 {
   bottom: 20px;
   right: 20px;
   z-index: 99;
-  background-color: var(--primary-color);
+  background-color: transparent;
+  border: 2px solid white;
   color: white;
-  border: none;
   cursor: pointer;
-  padding: 5px 8px 5px 8px;
-  border-radius: 50%;
+  padding: 7px 9px 5px 9px;
+  border-radius: 0;
 }
 
 /* media query portatili */
@@ -480,11 +487,12 @@ h4 {
   #profile-pic {
     width: 350px;
     height: 100%;
+    margin-left: -30px;
   }
 
   #main-headings {
     top: 200px;
-    left: 420px;
+    left: 380px;
   }
 
   h1 {
@@ -524,4 +532,17 @@ h2 {
   font-size: 42px;
   line-height: 1.2;
   color: white;
+}
+
+@media (min-width: 350px) and (max-width: 767.99px) {
+  #main-headings {
+    top: 0px;
+    left: 170px;
+  }
+
+  #profile-pic {
+    width: 350px;
+    height: 100%;
+    margin-left: -15px;
+  }
 }
