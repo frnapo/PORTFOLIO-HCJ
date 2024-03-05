@@ -273,7 +273,7 @@ h4 {
 }
 
 .skill-name {
-  color: #808080;
+  color: white;
   font-size: 16px;
 }
 
@@ -364,10 +364,16 @@ h4 {
   color: #808080;
   font-size: 14px;
   font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-bottom: 2px;
+  padding: 0;
 }
 
 .date {
   font-weight: 200;
+  color: #cbcbcb;
+  letter-spacing: 3px;
 }
 
 .canido-text {
