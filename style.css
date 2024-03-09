@@ -600,7 +600,7 @@ h2 {
 }
 
 .card-footer {
-  padding: 2.5rem 1.5rem;
+  padding: 0 1.5rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -617,7 +617,7 @@ h2 {
   position: absolute;
   aspect-ratio: 1;
   width: calc(var(--size) * 0.15);
-  bottom: 40%;
+  bottom: 30%;
   right: 1.5rem;
   transform: translateY(50%) translateY(calc((var(--size) * 0.4)))
     translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
