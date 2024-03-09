@@ -409,9 +409,10 @@ h4 {
 .custom-search {
   border-radius: 0;
   background-color: transparent;
-  border: 1px solid #808080;
+  border: 1px solid #fff;
   font-family: "Raleway", sans-serif;
   color: #888;
+  padding: 10px;
 }
 
 .custom-search::placeholder {
@@ -424,6 +425,11 @@ h4 {
   background-color: transparent;
   outline: 1px solid #ffffff;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
 }
 
 /* form di contatto */
@@ -575,6 +581,62 @@ h2 {
 
 /*  */
 
+.card {
+  --blur: 16px;
+  --size: clamp(300px, 50vmin, 600px);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+  transition: transform 0.35s;
+}
+
+.card-footer {
+  padding: 2.5rem 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  gap: 0.5ch;
+  background: hsl(0 0% 100% / 0.5);
+  backdrop-filter: blur(var(--blur));
+  height: 30%;
+  align-content: center;
+}
+
+.card-action {
+  position: absolute;
+  aspect-ratio: 1;
+  width: calc(var(--size) * 0.15);
+  bottom: 40%;
+  right: 1.5rem;
+  transform: translateY(50%) translateY(calc((var(--size) * 0.4)))
+    translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: hsl(0 0% 100% / 0.5);
+  transition: transform 0.35s;
+}
+
+.card-action svg {
+  aspect-ratio: 1;
+  width: 50%;
+}
+
+.card:is(:hover, :focus-visible) {
+  --hover: 1;
+}
+
 .bg {
   position: fixed;
   top: 0%;
@@ -591,4 +653,9 @@ h2 {
     font-size: 20rem;
     filter: opacity(0.2);
   }
+}
+
+.tech-color {
+  background-color: #808080;
+  color: var(--primary-color);
 }

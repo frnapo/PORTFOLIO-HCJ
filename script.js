@@ -145,6 +145,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+/* funzione per searchbar */
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector(".custom-search");
+  const cards = document.querySelectorAll(".col-6.col-lg-4.col-xl-3");
+  const noResults = document.getElementById("no-results");
+  let timeoutId;
+
+  searchInput.addEventListener("input", function () {
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      let hasResults = false;
+      const searchText = searchInput.value.toLowerCase();
+
+      cards.forEach((card) => {
+        const title = card.querySelector(".card-footer span").textContent.toLowerCase();
+        const badges = Array.from(card.querySelectorAll(".badge")).map((el) => el.textContent.toLowerCase());
+        if (title.includes(searchText) || badges.some((badge) => searchText.includes(badge))) {
+          card.style.display = "";
+          hasResults = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      noResults.style.display = hasResults ? "none" : "";
+    }, 500);
+  });
+});
+
 /* ----------------------------------------------------------------------------------- */
 
 // funzione per pulsante bring-me-up
